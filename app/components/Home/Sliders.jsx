@@ -21,7 +21,7 @@ export function Sliders() {
   return (
     <Carousel className="rounded-xl">
       {category?.map((item) => (
-        <div className="relative h-full w-full">
+        <div className="relative h-full w-full" key={item._id}>
           <Image
             width={600}
             height={550}

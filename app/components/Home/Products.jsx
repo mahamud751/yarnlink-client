@@ -45,7 +45,7 @@ const Products = () => {
           >
             {category?.map((item) => (
               <SplideSlide>
-                <div className="all_recommended">
+                <div className="all_recommended" key={item._id}>
                   <Image
                     width={230}
                     height={220}

@@ -79,7 +79,7 @@ const Market = () => {
                   26 <span>Nov, 22</span>
                 </div>
                 <h1>
-                  India's cotton exports stall as farmers delay sales hoping for
+                  Indias cotton exports stall as farmers delay sales hoping for
                   higher prices
                 </h1>
               </a>
