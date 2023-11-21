@@ -51,8 +51,8 @@ const Supplier = () => {
             }}
           >
             {category?.map((item) => (
-              <SplideSlide>
-                <div className="all_recommended" key={item._id}>
+              <SplideSlide key={item._id}>
+                <div className="all_recommended">
                   <Card className="mt-6">
                     <Image
                       width={230}
