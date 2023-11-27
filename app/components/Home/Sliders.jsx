@@ -8,7 +8,7 @@ export function Sliders() {
   const [category, setCategory] = useState();
   const fetchProducts = async () => {
     const response = await axios
-      .get("http://localhost:5001/api/banner")
+      .get("https://yarnlink-server.onrender.com/api/banner")
       .catch((err) => {
         err;
       });

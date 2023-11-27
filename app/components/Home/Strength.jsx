@@ -5,7 +5,7 @@ const Strength = () => {
   const [category, setCategory] = useState();
   const fetchStrength = async () => {
     const response = await axios
-      .get("http://localhost:5001/api/strength")
+      .get("https://yarnlink-server.onrender.com/api/strength")
       .catch((err) => {
         err;
       });

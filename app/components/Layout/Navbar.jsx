@@ -1,7 +1,16 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { Drawer } from "@material-tailwind/react";
+import Link from "next/link";
+import Image from "next/image";
+
+import { AuthContext } from "../../contexts/UserProvider";
+
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logoutUser();
+  };
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
@@ -20,51 +29,69 @@ const Navbar = () => {
             </div>
             <Drawer open={open} onClose={closeDrawer}>
               <div className="menu">
+                <div className="flex justify-end ">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="2em"
+                    viewBox="0 0 512 512"
+                    style={{
+                      color: "red",
+                      marginRight: 20,
+                      marginTop: 10,
+                      cursor: "pointer",
+                    }}
+                    onClick={closeDrawer}
+                  >
+                    {/*! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
+                    <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                  </svg>
+                </div>
                 <ul>
                   <li>
-                    <a href="index.html">Home</a>
+                    <Link href={"/"}>Home</Link>
                   </li>
                   <li>
-                    <a href="about-us.html">About Us</a>
+                    <Link href={"/about-us"}>About Us</Link>
                   </li>
                   <li>
-                    <a href="products.html">Products</a>
+                    <Link href={"/products"}>Products</Link>
                   </li>
                   <li>
                     <a href="login.html">Order Now</a>
                   </li>
                   <li>
-                    <a href="suppliers.html">Our Suppliers</a>
+                    <Link href={"/suppliers"}>Our Suppliers</Link>
                   </li>
                   <li>
-                    <a href="login.html">Cotton Price</a>
+                    <Link href="login.html">Cotton Price</Link>
                   </li>
                   <li>
-                    <a href="our-strength.html">Our Strength</a>
+                    <Link href="/strength">Our Strength</Link>
                   </li>
                   <li>
-                    <a href="vision-mission.html">Vision &amp; Mission</a>
+                    <Link href="/vision-mission">Vision &amp; Mission</Link>
                   </li>
                   <li>
-                    <a href="contact-us.html">Contact Us</a>
+                    <Link href="/contact-us">Contact Us</Link>
                   </li>
                   <li>
-                    <a href="blog.html">Blog</a>
+                    <Link href={"/blogs"}>Blog</Link>
                   </li>
                 </ul>{" "}
               </div>
             </Drawer>
           </div>
           <div className="w-50 text-center">
-            <a href="index.html" className="logo">
-              <img src="public/img/logo.png" title alt className />
-            </a>
+            <Link href="/" className="logo">
+              <img src="ss" title alt className />
+            </Link>
           </div>
           <div className="w-25 text-right">
+            {user?.name}
             <div className="links">
-              <a href="login.html">
+              <Link href="/login">
                 <img src="public/img/user.png" title alt className width={42} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

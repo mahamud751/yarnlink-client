@@ -6,18 +6,13 @@ import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+import { Card } from "@material-tailwind/react";
+
 const Supplier = () => {
   const [category, setCategory] = useState();
   const fetchSupplier = async () => {
     const response = await axios
-      .get("http://localhost:5001/api/supplier")
+      .get("https://yarnlink-server.onrender.com/api/supplier")
       .catch((err) => {
         err;
       });

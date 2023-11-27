@@ -10,7 +10,7 @@ const Products = () => {
   const [category, setCategory] = useState();
   const fetchProducts = async () => {
     const response = await axios
-      .get("http://localhost:5001/api/product")
+      .get("https://yarnlink-server.onrender.com/api/product")
       .catch((err) => {
         err;
       });

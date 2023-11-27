@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Footer = () => {
   return (
     <div className="footer">
@@ -58,13 +58,13 @@ const Footer = () => {
                 <h3 className="title">Company</h3>
                 <ul>
                   <li>
-                    <a href="about-us.html">About Us</a>
+                    <Link href="/about-us">About Us</Link>
                   </li>
                   <li>
-                    <a href="our-strength.html">Our Strength</a>
+                    <Link href="/strength">Our Strength</Link>
                   </li>
                   <li>
-                    <a href="vision-mission.html">Vision &amp; Mission</a>
+                    <Link href="/vision-mission">Vision &amp; Mission</Link>
                   </li>
                 </ul>
               </div>
@@ -78,7 +78,7 @@ const Footer = () => {
                     <a href="login.html">Cotton Prices</a>
                   </li>
                   <li>
-                    <a href="suppliers.html">Our Suppliers</a>
+                    <Link href="/suppliers">Our Suppliers</Link>
                   </li>
                 </ul>
               </div>
