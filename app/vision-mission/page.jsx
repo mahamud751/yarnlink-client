@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import Vision from "../components/Home/Vision";
 const VisionPage = () => {
   return (
