@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import UseFetch from "../../hooks/useFetch";
 const Footer = () => {
+  const { data: support } = UseFetch("support");
   return (
     <div className="footer">
       <div className="container">
@@ -27,12 +29,16 @@ const Footer = () => {
               <div className="col-sm-3">
                 <div className="need-help">
                   <h3 className="title">Need Help ? </h3>
-                  <p>
-                    <i className="fa fa-envelope mr-1" /> support@yarnLink.org
-                  </p>
-                  <p>
-                    <i className="fa fa-headphones mr-1" /> +8801789999751
-                  </p>
+                  {support?.map((item) => (
+                    <>
+                      <p key={item._id}>
+                        <i className="fa fa-envelope mr-1" /> {item?.email}
+                      </p>
+                      <p>
+                        <i className="fa fa-headphones mr-1" /> {item?.number}
+                      </p>
+                    </>
+                  ))}
                 </div>
               </div>
               <div className="col-sm-4">
@@ -72,11 +78,12 @@ const Footer = () => {
                 <h3 className="title">More Links</h3>
                 <ul>
                   <li>
-                    <a href="login.html">My Account</a>
+                    <Link href="/">My Account</Link>
                   </li>
                   <li>
-                    <a href="login.html">Cotton Prices</a>
+                    <Link href="/">Cotton Prices</Link>
                   </li>
+
                   <li>
                     <Link href="/suppliers">Our Suppliers</Link>
                   </li>
